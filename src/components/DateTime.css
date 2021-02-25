@@ -1,0 +1,36 @@
+.date__time {
+    font-family: "Montserrat";
+    font-size: 28px;
+    line-height: 34px;
+    display: flex;
+    justify-content: center;
+    margin: 26px 0;
+    height: 100%;
+}
+
+.whatDate, .whatTime {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.65);
+    transition: all 0.3s;
+}
+
+.whatDate {
+    margin-right: 10px;
+}
+
+.whatTime {
+    margin-left: 10px;
+    width: 290px;
+}
+
+.whatDate > span {
+    font-weight: bold;
+}
+
+.whatTime > span {
+    font-weight: bold;
+}

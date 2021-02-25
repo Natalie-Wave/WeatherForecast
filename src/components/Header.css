@@ -1,0 +1,282 @@
+.header {
+    height: 100px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    color: whitesmoke;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherImage {
+    width: 150px;
+    height: 100px;
+}
+
+.weatherImage > svg {
+    width: 100px;
+    align-self: flex-end;
+}
+
+.climacon_component-stroke {
+    fill: white;
+    stroke-width: 0px;
+    stroke: white;
+}
+
+.climacon_component-fill {
+    fill: #aedef4;
+    stroke-width: 0px;
+    stroke: white;
+}
+
+svg {
+    shape-rendering: geometricPrecision;
+}
+
+g, path, circle, rect {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+    animation-duration: 12s;
+    animation-direction: normal;
+}
+
+/* SUN */
+.climacon_componentWrap-sun {
+    /*animation-name: partialRotate;*/
+}
+
+.climacon_componentWrap_sunSpoke .climacon_component-stroke_sunSpoke {
+    animation-name: scale;
+    animation-direction: alternate;
+    animation-duration: 3s;
+}
+
+.climacon_componentWrap_sunSpoke .climacon_component-stroke_sunSpoke:nth-child(even) {
+    animation-delay: 3s;
+}
+
+/* MOON */
+.climacon_componentWrap-moon {
+    animation-name: partialRotate;
+    animation-duration: 12s;
+    animation-direction: alternate;
+}
+
+.climacon_componentWrap-sunsetAlt {
+    animation-name: translateSunset;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+.climacon_componentWrap-sunsetAlt {
+    animation-name: translateSunset;
+    animation-iteration-count: 1;
+}
+
+.climacon_iconWrap-sun .climacon_component-stroke_sunSpoke, .climacon_iconWrap-sunFill .climacon_component-stroke_sunSpoke {
+    fill-opacity: 1;
+    animation-name: scale;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+.climacon_iconWrap-sun .climacon_component-stroke_sunSpoke:nth-child(even), .climacon_iconWrap-sunFill .climacon_component-stroke_sunSpoke:nth-child(even) {
+    animation-delay: 3s;
+}
+
+.climacon-iconWrap_sunFill .climacon_component-stroke_sunSpoke {
+    fill-opacity: 1;
+    animation-name: scale;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+.climacon-iconWrap_sunFill .climacon_component-stroke_sunSpoke:nth-child(even) {
+    animation-delay: 3s;
+}
+
+.climacon_component-stroke_arrow-up {
+    fill-opacity: 0;
+    animation-name: fillOpacity2, translateArrowUp;
+    animation-duration: 3s;
+}
+
+.climacon_component-stroke_arrow-down {
+    fill-opacity: 0;
+    animation-name: fillOpacity2, translateArrowDown;
+    animation-duration: 3s;
+}
+
+.climacon_componentWrap-sunrise .climacon_component-stroke_sunSpoke, .climacon_componentWrap-sunset .climacon_component-stroke_sunSpoke {
+    animation-name: scale;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-delay: 0;
+    animation-fill-mode: both;
+}
+
+.climacon_componentWrap-sunrise .climacon_component-stroke_sunSpoke:nth-child(even), .climacon_componentWrap-sunset .climacon_component-stroke_sunSpoke:nth-child(even) {
+    animation-delay: 3s;
+}
+
+.climacon_componentWrap-sunriseAlt {
+    animation-name: translateSunrise, fillOpacity;
+    animation-duration: 12s, 6s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.climacon_componentWrap-sunriseAlt .climacon_component-stroke_sunSpoke {
+    fill-opacity: 0;
+    animation-name: fillOpacity, scale;
+    animation-direction: normal, alternate;
+    animation-iteration-count: 1, infinite;
+    animation-duration: 3s;
+    animation-delay: 3s, 0;
+    animation-fill-mode: both;
+}
+
+.climacon_componentWrap-sunriseAlt .climacon_component-stroke_sunSpoke:nth-child(even) {
+    animation-delay: 3s, 3s;
+}
+
+.climacon_componentWrap-sunsetAlt {
+    animation-name: translateSunset;
+    animation-delay: 0;
+    animation-duration: 12s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes partialRotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+    }
+}
+
+@keyframes fillOpacity {
+    0% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+
+    100% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+}
+
+@keyframes fillOpacity2 {
+    0% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+
+    50% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    100% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+}
+
+@keyframes translateSunrise {
+    0% {
+    transform: translateY(0);
+    }
+
+    25% {
+    transform: translateY(-16.002px);
+    }
+
+    100% {
+    transform: translateY(-16.002px);
+    }
+}
+
+@keyframes translateSunset {
+    0% {
+    transform: translateY(-16.002px);
+    }
+
+    25% {
+    transform: translateY(-3.997px);
+    }
+
+    100% {
+    transform: translateY(-3.997px);
+    }
+}
+
+@keyframes translateArrowDown {
+    0% {
+    transform: translateY(2.002px);
+    }
+
+    100% {
+    transform: translateY(4.998px);
+    }
+}
+
+@keyframes translateArrowUp {
+    0% {
+    transform: translateY(-2.002px);
+    }
+
+    100% {
+    transform: translateY(-4.998px);
+    }
+}

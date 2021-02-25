@@ -1,0 +1,16 @@
+.advice__wear {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.advice__wear > img {
+    /*border: 2px solid #333;
+    border-radius: 20px;
+    background-color: #fff;*/
+}
+
+.plus {
+    font-weight: bold;
+    align-self: center;
+    padding: 0 15px;
+}
